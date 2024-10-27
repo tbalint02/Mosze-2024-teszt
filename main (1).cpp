@@ -5,26 +5,37 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int* b = new int[N_ELEMENTS + 1]; // Rosszul volt megadva a név
+    int *b = new int[N_ELEMENTS + 1]; // Rosszul volt megadva a nï¿½v
     std::cout << "1-100 ertekek duplazasa" << std::endl;
     for (int i = 1; i <= N_ELEMENTS; i++)
     {
         b[i] = i * 2;
     }
-    for (int i = 1; i <= N_ELEMENTS; i++) //for ciklus kiegészítése
+    for (int i = 1; i <= N_ELEMENTS; i++) // for ciklus kiegï¿½szï¿½tï¿½se
     {
-        std::cout << i << "Ertek:" << b[i] << std::endl; //Hiányzo zárás és értékek kimutatása
+        std::cout << i << "Ertek:" << b[i] << std::endl; // Hiï¿½nyzo zï¿½rï¿½s ï¿½s ï¿½rtï¿½kek kimutatï¿½sa
     }
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag = 0; //Inicializálás
-    for (int i = 0; i <= N_ELEMENTS, i++)
+    int atlag = 0; // Inicializï¿½lï¿½s
+    for (int i = 0; i <= N_ELEMENTS; i++)
     {
         atlag += b[i];
     }
     atlag /= N_ELEMENTS;
-    std::cout << "Atlag: " << atlag << std::endl;//átlag kiírása
-    delete[] b; //mamoria felszabaditas
+    std::cout << "Atlag: " << atlag << std::endl; // ï¿½tlag kiï¿½rï¿½sa
+    delete[] b;                                   // mamoria felszabaditas
 
+    osszeg();
 
     return 0;
+}
+
+int osszeg()
+{
+    int ossz = 0;
+    for (int i = 1; i <= N_ELEMENTS; i++)
+    {
+        ossz += i;
+    }
+    std::cout << "Az Ã©rtÃ©kek Ã¶sszege: " << ossz << std::endl;
 }
